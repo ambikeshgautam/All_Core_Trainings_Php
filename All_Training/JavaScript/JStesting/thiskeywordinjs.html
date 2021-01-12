@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this keywords</title>
+    <script>
+        //         What is this?
+
+        // The JavaScript this keyword refers to the object it belongs to.
+
+        // It has different values depending on where it is used:
+
+        //     In a method, this refers to the owner object.
+        //     Alone, this refers to the global object.
+        //     In a function, this refers to the global object.
+        //     In a function, in strict mode, this is undefined.
+        //     In an event, this refers to the element that received the event.
+        //         //     Methods like call(), and apply() can refer this to any object.
+        //         this in a Method
+
+        // In an object method, this refers to the "owner" of the method.
+
+        // In the example on the top of this page, this refers to the person object.
+
+        //         // The person object is the owner of the fullName method.
+        //         this in a Function (Default)
+
+        // In a JavaScript function, the owner of the function is the default binding for this.
+
+        // So, in a function, this refers to the Global object [object Window]
+        // Create an object:
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        // Display data from the object:
+        document.getElementById("demo").innerHTML = person.fullName();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

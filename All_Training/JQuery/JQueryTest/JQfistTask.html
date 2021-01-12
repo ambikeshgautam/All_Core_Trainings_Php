@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstTaskJQ</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+
+            $("#myBtn").click(function() {
+
+                var str1 = $("#psku").val();
+                var str2 = $("#prdname").val();
+                var str3 = $("#lname").val();
+                $("ol").append("<li>" + str1 + "</li>");
+                $("ol").append("<li>" + str2 + "</li>");
+                $("ol").append("<li>" + str3 + "</li>");
+
+            });
+        });
+    </script>
+    <div id="input-form">
+        <form>
+            <label for="fname">Product SKU:</label>
+            <input type="text" id="psku" name="firstname" placeholder="Product SKU">
+
+            <label for="lname">Product Name:</label>
+            <input type="text" id="prdname" name="lastname" placeholder="Product Name">
+
+            <label for="lname">Product Quantity :</label>
+            <input type="text" id="lname" name="lastname" placeholder="Product Quantity">
+            <button class="button button4" id="myBtn">Add Product</button>
+        </form>
+    </div>
+    Bhai Tum karo mai apne me banata hun f ok bro btao ek minut dekh lo mai run krr raha hun
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+
+</body>
+
+</html>

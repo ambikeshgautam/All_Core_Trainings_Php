@@ -1,0 +1,18 @@
+[{
+        "id": 1001,
+        "name": "Ambikesh",
+        "age": 20,
+        "address": "Lucknow"
+    }, {
+        "id": 1002,
+        "name": "Surya",
+        "age": 22,
+        "address": "Lucknow"
+    },
+    {
+        "id": 1003,
+        "name": "Raj",
+        "age": 24,
+        "address": "Kanpur"
+    }
+]

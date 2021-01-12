@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is My first Query Code.</title>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() { //THIS IS FUNCTION WHICH SAYS IF BUTTON WILL CLICK THEN IT WILL RUN
+                $("p").hide(); //here $("p") is the selector by id and .hide(); is function which will hide this document
+            });
+        });
+    </script>
+
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Click me to hide paragraphs</button>
+</body>
+
+</html>

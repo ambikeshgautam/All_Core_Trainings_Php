@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>jquery | 1st</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label>Product SKU</label>
+
+                <input type="text" name="SKU" class="form-input" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Product Name </label>
+
+                <input type="text" name="pname" class="form-input" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Product Price</label>
+
+                <input type="text" name="pprice" class="form-input" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Product Quantity</label>
+
+                <input type="text" name="pquntity" class="form-input" required="" />
+            </div>
+
+            <button type="submit" class="addprdct">Add Product</button>
+        </form>
+        <div id="box">
+            <p>
+            </p>
+        </div>
+
+        <br/>
+
+        <table class="table table-bordered data-table">
+            <thead>
+                <th>SKU</th>
+
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+
+                <th>Action</th>
+            </thead>
+
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        $(".addprdct").click(function(e) {
+            e.preventDefault();
+
+            var psku = $("input[name='SKU']").val();
+
+            var prdname = $("input[name='pname']").val();
+            var prdprice = $("input[name='pprice']").val();
+            var prdqnt = $("input[name='pquntity']").val();
+
+            if ($(".form-input").val() == "") {
+                var showbnt = $("#box").html(
+                    "<div style='background-color:red; height:50px; padding:; border-radius:10px;'><h3>There is some problem.<button id='button1'>X</button></h3></div>"
+                );
+                $("#button1").click(function() {
+                    $(showbnt).hide();
+                });
+            } else {
+                var showbtn = $("#box").html("<div style='background-color:green; height:50px; padding:5px; border-radius:10px;'><h3>Product Added Successfully .<button id='button2'>X</button></h3></div>");
+                $("#button2").click(function() {
+                    $(showbtn).hide();
+                });
+            }
+
+            $(".data-table tbody").append("'<tr data-prdsku='" + psku + "' data-prdname ='" + prdname + "' data-prdprice='" + prdprice + "'data-prdqnt='" + prdqnt + "'><td>" + psku + "</td><td>" + prdname + "</td><td>" + prdprice + "</td><td>" + prdqnt + "</td><td><a href='#' class='btn btn-info btn-xs btn-edit'>Edit</a><a  href='#' class='btn btn-danger btn-xs btn-delete'>Delete</a></td></tr>");
+
+            $("input[name='SKU']").val("");
+
+            $("input[name='pname']").val("");
+            $("input[name='pprice']").val("");
+            $("input[name='pquntity']").val("");
+        });
+
+        $("body").on("click", ".btn-delete", function() {
+            $(this).parents("tr").remove();
+        });
+
+        $("body").on("click", ".btn-edit", function() {
+            var psku = $(this).parents("tr").attr("data-prdsku");
+
+            var prdname = $(this).parents("tr").attr("data-prdname");
+
+            var prdprice = $(this).parents("tr").attr("data-prdprice");
+
+            var prdqnt = $(this).parents("tr").attr("data-prdqnt");
+
+            $(this).parents("tr").find("td:eq(0)").html('<input name="edit_prdsku" value="' + psku + '">');
+
+            $(this).parents("tr").find("td:eq(1)").html('<input name="edit_prdname" value="' + prdname + '">');
+
+            $(this).parents("tr").find("td:eq(2)").html('<input name="edit_prdprice" value="' + prdprice + '">');
+
+            $(this).parents("tr").find("td:eq(3)").html('<input name="edit_prdqnt" value="' + prdqnt + '">');
+
+            $(this).parents("tr").find("td:eq(4)").prepend("<a  href ='#' class='btn btn-info btn-xs btn-update'>Update</a><a href='#' class='btn btn-warning btn-xs btn-cancel'>Cancel</a>");
+
+            $(this).hide(); //here that means this button will hide after these opration
+        });
+
+        $("body").on("click", ".btn-cancel", function() {
+
+            var psku = $(this).parents("tr").attr("data-prdsku");
+
+            var prdname = $(this).parents("tr").attr("data-prdname");
+
+            var prdprice = $(this).parents("tr").attr("data-prdprice");
+
+            var prdqnt = $(this).parents("tr").attr("data-prdqnt");
+
+            $(this).parents("tr").find("td:eq(0)").text(psku);
+
+            $(this).parents("tr").find("td:eq(1)").text(prdname);
+
+            $(this).parents("tr").find("td:eq(2)").text(prdprice);
+
+            $(this).parents("tr").find("td:eq(3)").text(prdqnt);
+
+            $(this).parents("tr").find(".btn-edit").show();
+
+            $(this).parents("tr").find(".btn-update").remove();
+
+            $(this).parents("tr").find(".btn-cancel").remove();
+        });
+
+        $("body").on("click", ".btn-update", function() {
+
+
+            var prdsku = $(this).parents("tr").find("input[name='edit_prdsku']").val();
+
+            var prdname = $(this).parents("tr").find("input[name='edit_prdname']").val();
+
+            var prdprice = $(this).parents("tr").find("input[name='edit_prdprice']").val();
+
+            var prdqnt = $(this).parents("tr").find("input[name='edit_prdqnt']").val();
+
+
+            $(this).parents("tr").find("td:eq(0)").text(prdsku);
+
+            $(this).parents("tr").find("td:eq(1)").text(prdname);
+
+            $(this).parents("tr").find("td:eq(2)").text(prdprice);
+
+            $(this).parents("tr").find("td:eq(3)").text(prdqnt);
+
+
+            $(this).parents("tr").attr("data-prdsku", prdsku);
+
+            $(this).parents("tr").attr("data-prdname", prdname);
+
+            $(this).parents("tr").attr("data-prdprice", prdprice);
+
+            $(this).parents("tr").attr("data-prdqnt", prdqnt);
+
+            $(this).parents("tr").find(".btn-edit").show();
+
+            $(this).parents("tr").find(".btn-cancel").remove();
+
+            $(this).parents("tr").find(".btn-update").remove();
+        });
+    </script>
+</body>
+
+</html>

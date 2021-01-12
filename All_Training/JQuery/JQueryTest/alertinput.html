@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script language="javaScript">
+        var namePattern = "^[a-z A-Z]{4,30}$";
+        $(document).ready(function() {
+            $("#bEnviar").click(function() {
+                var login = $("#login").val();
+                var password = $("#password").val();
+                if (login == "") {
+                    $("#login").css("display", "block");
+                }
+                if (password = "") {}
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <div class="form-group col-md-12">
+            <label for="login" class="col-form-label">Login</label>
+            <input type="text" id="login" class="form-control" placeholder="Login">
+            <div id="login" class="alert alert-danger d-none" role="alert-danger">
+                Inserte nombre de usuario
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="password" class="col-form-label">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password">
+            <div id="pass" class="alert alert-danger d-none" role="alert-danger">
+                Inserte password
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <button type='submit' id="bEnviar" class="btn btn-primary">Ingresar</button>
+        </div>
+    </form>
+</body>
+
+</html>

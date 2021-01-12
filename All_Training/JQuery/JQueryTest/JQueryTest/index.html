@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+                    //====================HIDE FUNCTION =============================
+
+                    // $("#hide").click(function() {
+                    //     $("p").hide();
+
+                    // });
+
+                    // $("#show").click(function() {
+                    //     $("p").show();
+                    // });
+
+                    // $("#btn").click(function() {
+                    //     $("#p1").toggle();
+                    // });
+                    //============================//HIDDE FUNCTION ============================
+                    //=========================HERE FADEIN ===========================================
+                    // $("button").click(function() {
+                    //     $("#div1").fadeIn();//THIS WILL FADE IN THE DIV
+                    //     $("#div2").fadeIn("slow");//THIS'LL FADE BUT FLOWELY
+                    //     $("#div3").fadeIn(3000);//THIS'LL FADEIN WITH TIME IN MLISECONDS
+                    // });
+                    $("button").click(function() {
+                        $("#div1").fadeOut();
+                        $("#div2").fadeOut("slow");
+                        $("#div3").fadeOut(3000);
+
+                    });
+        })''
+    </script>
+</head>
+
+<body>
+    <!--================================THIS SECTOIN FOR THE HIDING EXAMPLE OF HTML CODE========================================-->
+    <!-- <p>Lorem ipsum dol or sit amet consectetur adipisicing elit. Earum alias quibusdam ipsa labore vitae harum esse, ad quos, corrupti, cum velit ea quam facilis sapiente aut inventore nisi consequuntur accusantium?</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <p id="p1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum dicta iure repudiandae sequi itaque corrupti maiores unde vitae, laudantium odio asperiores minima ducimus in natus delectus porro dolor? Quod!</p>
+    <button><span id="btn">toggle</span></button> -->
+
+    <p>Demonstrate fadeIn() with different parameters.</p>
+
+    <button>Click to fade in boxes</button><br><br>
+
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,12 @@
+$.ajax({
+    url:"file.php",//file name which we have to perform some dataBAse task such as insert delete update and many more.
+    type:"POST",//type (method of sending way)
+    data:String /Array /Object ,//data means which we have getted from the url file we put here to show that , these are three way to pass the data
+    success:function(data/*this data is reternign from the 'ulr' file ....we can also put here some other name*/){
+
+        1. Inside this function we  code where our data will going to show .
+        
+
+
+    }
+});

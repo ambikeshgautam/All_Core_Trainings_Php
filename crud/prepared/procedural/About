@@ -1,0 +1,82 @@
+Prepared Statement:-
+
+A prepared statement or a prameterized statement is used to execute the same statement repeatedly with heigh effficiency .The prepared statement exucution consists of two stages:prepare and execute.
+At the prepare stage a statement template is sent to the database server .The server creates a statement from the statement template and these values to execute it.
+The MYSQL  server supports anonymous positional placeholder whith ?
+While PDO supports both anonymous positional palceholder(?) , as qwll as the named placehlders .A 
+
+MYSQLI Procedulal with Prepared Statement 
+
+. myslqi_prepare() - It prepares an SQL statement and returns a statement handle to be used for further operations on the statement or FALSE if an error occurred.The 
+query must consist of a single SQL statement .
+Syntax:- mysqli_prepare($conn, $sql)
+$conn returned by mysqli_connect()
+
+$sql = " INSERT INTO student (name, roll , add ) VALUES ( )
+
+_________________________________________________________________________________________________________________________________________________________________
+
+mysqli_stmt_bind_param() __ it binds variable top prepared statement as parameters . It returns TRUE on success or FALSE on failure.
+
+Syntax:- mysqli_stmt_bind_param($result,type,$variable)
+
+Where $result is returned by mysqli_prepre($conn,$sql)
+type are i,s,d, b 
+$variables are like $name , $roll ,$address etc
+
+s->string 
+i->integer
+d->double
+b-< BLOB (such as image , PDF file , etc)
+
+Ex:-
+
+$result = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($result,'sis',$name,$roll,$address);
+____________________________________________________________________________________________________________________________________________________________________
+
+mysqli_stmt_execute() - It executes a query that has been previously prepared using the mysqli_prepare() function .It returns TWUE on success or FAlse on dailure.
+
+         Syntax : mysqli_stmt_execute($result);
+
+>mysqli_stmt_close() - It closes a prepared statemtnt and also deallocates the statement handle >if the current statement has pending or unread results, this function 
+cancels them so thta tthe nesxt query can be execute . It returns TRUE on success or false on failure
+
+Syntax :- mysqli_stmt_close($result);_________________________________________________________________________
+
+
+For SELECT :-
+mysql_stmt_bind_result() -: it binds variavle to a prepared statement for result storage .It returns TRUE on success or FALSE  on failure
+
+    Ex:- mysqli_stmt_bind_result($result);
+.mysqli_stmt_store_result() - It transfer a result set from a prepare statement .It returns TRUE On success or FALSE on failure.
+
+        ex:- mysqli_stmt_store_result($result);
+.mysqli_stmt_num_rows() - it returns the number of rows in statements result set.
+
+.mysqli_stmt_free_result() - It free the result menotry associated with statement , which was allocated by mysqli_stmt_store_result().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?

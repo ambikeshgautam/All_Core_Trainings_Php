@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            var objArr = [{
+                empID: 'empID1',
+                fname: 'fname1',
+                lname: 'lname1',
+                phone: 'phone1',
+                address: 'address1',
+                deptID: 'deptID1',
+                email: 'email1'
+            }, {
+                empID: 'empID2',
+                fname: 'fname2',
+                lname: 'lname2',
+                phone: 'phone2',
+                address: 'address2',
+                deptID: 'deptID2',
+                email: 'email2'
+            }];
+
+            var html = '';
+            for (var i = 0; i < objArr.length; i++) {
+                html = "<tr>";
+                html += "<td>" + objArr[i]["empID"] + "</td>";
+                html += "<td>" + objArr[i]["fname"] + "</td>";
+                html += "<td>" + objArr[i]["lname"] + "</td>";
+                html += "<td>" + objArr[i]["phone"] + "</td>";
+                html += "<td>" + objArr[i]["address"] + "</td>";
+                html += "<td>" + objArr[i]["deptID"] + "</td>";
+                html += "<td>" + objArr[i]["email"] + "</td>";
+                html += "<td>" + '<button>Delete</button>' + "</td></tr>";
+
+                $("#dataTable").append(html);
+
+            }
+
+            $('#dataTable').on('click', 'button', onClickDelete);
+
+            function onClickDelete() {
+                $(this).parents('tr').remove();
+            }
+            var objArr = [{
+                empID: 'empID1',
+                fname: 'fname1',
+                lname: 'lname1',
+                phone: 'phone1',
+                address: 'address1',
+                deptID: 'deptID1',
+                email: 'email1'
+            }, {
+                empID: 'empID2',
+                fname: 'fname2',
+                lname: 'lname2',
+                phone: 'phone2',
+                address: 'address2',
+                deptID: 'deptID2',
+                email: 'email2'
+            }];
+
+            var html = '';
+            for (var i = 0; i < objArr.length; i++) {
+                html = "<tr>";
+                html += "<td>" + objArr[i]["empID"] + "</td>";
+                html += "<td>" + objArr[i]["fname"] + "</td>";
+                html += "<td>" + objArr[i]["lname"] + "</td>";
+                html += "<td>" + objArr[i]["phone"] + "</td>";
+                html += "<td>" + objArr[i]["address"] + "</td>";
+                html += "<td>" + objArr[i]["deptID"] + "</td>";
+                html += "<td>" + objArr[i]["email"] + "</td>";
+                html += "<td>" + '<button>Delete</button>' + "</td></tr>";
+
+                $("#dataTable").append(html);
+
+            }
+
+            $('#dataTable').on('click', 'button', onClickDelete);
+
+            function onClickDelete() {
+                $(this).parents('tr').remove();
+            }
+
+        });
+
+
+        <
+        script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" >
+    </script>
+    <table id="dataTable"></table>
+
+
+</body>
+
+</html>

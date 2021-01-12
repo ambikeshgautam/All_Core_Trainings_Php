@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>AllButtonGood</title>
+
+    <style>
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid #cdcdcd;
+        }
+        
+        table th,
+        table td {
+            padding: 5px;
+            text-align: left;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $(".add-row").click(function() {
+
+                var psku = $("#sku").val();
+
+                var pname = $("#prdname").val();
+
+                var prdprice = $("#pprice").val();
+
+                var PQ = $("#pqnt").val();
+
+                var markup = "<tr>><td>" + psku + "</td><td>" + pname + "</td><td>" + prdprice + "</td><td>" + PQ + "</td><td><button type=\"button\" class=\"delete-row\">Delete Row</button><button type=\"button\" class=\"add-row\">Add Row</button></td></tr>";
+
+                $("table tbody").append(markup);
+
+            });
+
+
+
+            // Find and remove selected table rows
+
+            $(".delete-row").click(function() {
+
+                $("#mytrow").remove();
+            });
+
+
+            $('button').click(function() {
+                if ($('#prdname').val() == '') {
+                    alert('Input can not be left blank');
+                }
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <ul>
+
+            <li> Product SKU :-<input type="text" id="sku" placeholder="SKU"></li>
+
+            <li>Product Name:- <input type="text" id="prdname" placeholder="Product Name"></li>
+
+            <li>Product Price:-<input type="text" id="pprice" placeholder="Product Price"></li>
+
+            <li>Product Quantity:- <input type="text" id="pqnt" placeholder="Pquantiy"></li>
+
+            <li><input type="button" class="add-row" value="Add Row"></li>
+        </ul>
+
+    </form>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th> SKU</th>
+                <th> NAME</th>
+                <th>PRICE</th>
+                <th>Quantity </th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="mytrow">
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>

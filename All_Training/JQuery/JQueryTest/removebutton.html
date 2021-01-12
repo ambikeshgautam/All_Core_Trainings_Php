@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove</title>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            $("#addCF").click(function() {
+                $("#customFields").append('<tr valign="top"><th scope="row"><label for="customFieldName">Custom Field</label></th><td><input type="text" class="code" id="customFieldName" name="customFieldName[]" value="" placeholder="Input Name" /> &nbsp; <input type="text" class="code" id="customFieldValue" name="customFieldValue[]" value="" placeholder="Input Value" /> &nbsp; <a href="javascript:void(0);" id="remCF">Remove</a></td></tr>');
+            });
+
+            $("#customFields").on('click', '#remCF', function() {
+                $(this).parent().parent().remove();
+            });
+
+        });
+    </script>
+    <table class="form-table" id="customFields">
+        <tr valign="top">
+            <th scope="row"><label for="customFieldName">Custom Field</label></th>
+            <td>
+                <input type="text" class="code" id="customFieldName" name="customFieldName[]" value="" placeholder="Input Name" /> &nbsp;
+                <input type="text" class="code" id="customFieldValue" name="customFieldValue[]" value="" placeholder="Input Value" /> &nbsp;
+                <a href="javascript:void(0);" id="addCF">Add</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

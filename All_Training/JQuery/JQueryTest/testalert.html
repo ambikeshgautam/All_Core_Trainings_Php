@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testalert</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                if ($('#myMessage').val() == '') {
+                    alert('Input can not be left blank');
+                }
+            });
+        });
+    </script>
+    <input type="text" id="myMessage" name="shoutbox_msg" size="16" class="field_nosize" maxlength="150">
+    <input type="text" id="myMessage" name="shoutbox_msg" size="16" class="field_nosize" maxlength="150">
+    <input type="text" id="myMessage" name="shoutbox_msg" size="16" class="field_nosize" maxlength="150">
+    <input id="submit" type="submit" name="submit_post" class="button_nosize" value=" serch" />
+
+</body>
+
+</html>

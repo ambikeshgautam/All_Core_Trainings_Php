@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Welcome to first task</title>
+
+    <style>
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid #cdcdcd;
+        }
+        
+        table th,
+        table td {
+            padding: 5px;
+            text-align: left;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .input-form {
+            padding: 50px;
+        }
+        
+        input[type=text] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        #divred {
+            height: 75px;
+            width: 100% background-color: red;
+            color: white;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--this is CDN LINK FOR JQUERY-->
+
+    <script>
+        $(document).ready(function() {
+            a[0] = $("#sku").val();
+            a[1] = $("#prdname").val();
+            a[2] = $("#pprice").val();
+            a[3] = $("#pqnt").val();
+            var skuvalue = /^[0-9]+$/; //this denots the vlaue will in between Number no any character
+            var namevalue = /^[0-9a-zA-Z]+$/; //It could be character or Number
+            var pricevalue = /^[$]\d+[\.]\d{1-2}$/; //It may be in float vlaue
+            var quantvalue = /^[0-9]+$/; //It will only a number
+            if ((!sku.test(a[0])) || (!sku.test(a[1])) || (!sku.test(a[2])) || (!sku.test(a[3]))) { //checking here for the these all are valid as a input
+                $("#divred").css("visibility", "visible"); //
+            } else {
+
+                //var txt="<tr><td>"+a[0]+'</td> <td>'+a[1]+'</td> <td>'+a[2]+'</td> <td>'+a[3]+'</td>';
+
+                var text = "<tr>";
+                a.forEach(addRow);
+                text += '<td> <a id="edit" href="javascript:; onclick=edit();">' + "Edit" + '</a> <a id="delete" href="javascript:; onclick=delete()">' + "Delete" + '</a></td>';
+                text += "</tr>";
+
+                function addRow(value) {
+                    text += "<td>" + value + "</td>";
+
+                    $("table").append(text);
+                    $("#div1").css("visibility", "visible");
+                    i++;
+                }
+            }
+
+            function manipulate() {
+                $("#edit").attr("href");
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="input-form">
+        <form>
+            <ul>
+
+                <li> Product SKU :-<input type="text" id="sku" placeholder="SKU" class="avalues"></li>
+
+                <li>Product Name:- <input type="text" id="prdname" placeholder="Product Name"></li>
+
+                <li>Product Price:-<input type="text" id="pprice" placeholder="Product Price"></li>
+
+                <li>Product Quantity:- <input type="text" id="pqnt" placeholder="Pquantiy"></li>
+
+                <li><input type="button" class="addRow" value="Add Row"></li>
+            </ul>
+
+        </form>
+    </div>
+    <div id="divred">
+        <p>There is some problem </p>
+
+    </div>
+    <table>
+
+
+
+        <tr>
+            <th> SKU</th>
+            <th> NAME</th>
+            <th>PRICE</th>
+            <th>Quantity </th>
+            <th>ACTION</th>
+        </tr>
+
+
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+
+
+    </table>
+</body>
+
+</html>

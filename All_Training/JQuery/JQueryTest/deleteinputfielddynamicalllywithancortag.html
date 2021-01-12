@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputfield</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            var max_fields = 10; //maximup input boxes allowed
+            var wrapper = $(".input_f_wrap"); //Fields wrapper
+            var add_button = $(".add_f_button");; //add button Id
+            var x = 1; // intial text box count
+            $(add_button).click(function(e) {
+                e.preventDefault();
+                if (a < max_fields) {
+
+                    $(wrapper).append('<div><input type="text" name ="mytext[]"/><a href="#" class="remove_field">Remove</a></div>');
+                    x++; //text box increment 
+                }
+
+
+            });
+            $(wrapper).on("click", ".remove_field", function(e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            });
+        });
+    </script>
+    <div class="input_fields_wrapper">
+        <button class="add_field_button">Add More fileds</button>
+        <div><input type="text name=mytext[]"> </div>
+    </div>
+
+</body>
+
+</html>

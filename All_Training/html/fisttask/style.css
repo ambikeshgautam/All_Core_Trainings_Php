@@ -1,0 +1,111 @@
+	
+				body{
+					padding:0%;
+					margin:0%;
+					
+				}
+				.header{
+					overflow: hidden;
+  					padding: 20px 40px;
+					background-color: #e5e4f0;
+					width: 100%;
+					float: left;
+					padding-left: 100px: 
+				}
+				
+				#sitename{
+
+					margin-right:200px;
+				}
+				.navbar{
+					margin: 0;
+					padding: 0;
+				}
+
+				 ul{
+					list-style-type: none;
+					margin:0;
+					padding: 0px 20px;
+					overflow: hidden;
+					background-color: #21212b;
+					padding-left: 0px;
+
+				}
+				li{
+					float: left;
+					 border-right:1px solid white;
+
+
+				}
+				li a{
+					display: inline-block;
+					color: white;
+					text-align: center;
+					padding: 12px 16px;
+					text-decoration: none;
+
+
+				}
+				a:hover{
+					background-color: green;
+					border-right:none;
+
+
+				}
+				/*===========================HERE CONTECT ARE============================*/
+
+				*{
+					box-sizing: border-box;/*it allow to padding border element total width and height */
+				}
+				.parent{
+					  	display: flex;
+					  	/*Set the direction of the
+					  	 flexible items inside
+					  	  the  element in reverse
+					  	   order*/
+       					flex-direction: row;
+       					/* it cover all div in the row */
+
+
+       					}
+
+				#box1{
+					  float: left;
+					  width: 70%;
+					  padding-left:50px;
+					  padding-right: 50px;
+					  background-color:white;
+				}
+				
+				#box2{
+					float:right;
+					padding:15px;
+					width: 30%;
+					background-color:white;
+				}
+
+				.parent::after {
+					  content: " ";
+					  clear:both;
+					  display: table;
+					  
+				}
+				.footer {
+						overflow: hidden;
+  						padding: 50px 40px;
+						background-color: #e5e4f0;
+						width: 100%;
+						float: right;
+						text-align: right;
+					
+
+				}
+				h1{
+					color: #0d10a3;
+				}
+				h2{
+					
+					color:  #0d10a3;
+				}
+				
+				/*====================================//CONTENT  AREA===============================*/

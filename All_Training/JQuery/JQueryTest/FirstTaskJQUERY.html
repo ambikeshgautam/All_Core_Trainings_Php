@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Welcome to first task</title>
+
+    <style>
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        
+        table,
+        th,
+        td {
+            border: none;
+        }
+        
+        table th,
+        table td {
+            padding: px;
+            text-align: left;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .input-form {
+            padding: 50px;
+        }
+        
+        input[type=text] {
+            width: 50%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* #divgreen {
+            height: 50px;
+            width: 100%;
+            background-color: green;
+            color: black;
+            border-radius: 10px;
+            padding-top: 5px;
+        }
+        */
+        
+        ;
+        .color-redbox {
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            color: black;
+            border-radius: 10px;
+            padding-top: 5px;
+            margin-top: 10px;
+        }
+        
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+            height: 50px;
+            width: 500px;
+            background-color: red;
+        }
+        
+        h3 {
+            align: right;
+        }
+        
+        button {
+            align: left;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--this is CDN LINK FOR JQUERY-->
+
+    <script>
+        $(document).ready(function() {
+            //==========================this is alert function if input  is no compaletly fielded=======================
+            $('.add-product').click(function() {
+                // if ($('.avalues').val() == '') {
+                //     $("#redbox").html("<div style='background-color:red; height:50px; padding:5px; border-radius:10px;'><h3>There is some problem.×</h3></div>");
+                // } else {
+                //     $("#redbox").html("<div style='background-color:green; height:50px; padding:5px; border-radius:10px;'><h3>Product Added Successfully ✔.</h3></div>");
+                // }
+            });
+            //==========================================================================================================
+            //======================THIS FUNCTION IS FOR ADD A ROW======================================================
+            $(".add-product").click(function() {
+
+                if ($('.avalues').val() == '') {
+                    var showbnt = $("#redbox").html("<div style='background-color:red; height:50px; padding:; border-radius:10px;'><h3>There is some problem.<button id='button1'>X</button></h3></div>");
+                    $('#button1').click(function() {
+                        $(showbnt).hide();
+                    });
+                } else {
+                    var showbtn = $("#redbox").html("<div style='background-color:green; height:50px; padding:5px; border-radius:10px;'><h3>Product Added Successfully .<button id='button2'>X</button></h3></div>");
+                    $('#button2').click(function() {
+                        $(showbtn).hide();
+                    });
+                }
+
+
+                var psku = $("#sku").val();
+
+                var pname = $("#prdname").val();
+
+                var prdprice = $("#pprice").val();
+
+                var PQ = $("#pqnt").val();
+
+                var Btn = '<a href="javascript:void(0);" class="delete-row" >Delete</a><a href="javascript:void(0);" class="edite-product">Edite </a>';
+
+
+                var allvalues = "<tr><td>" + psku + "</td><td>" + pname + "</td><td>" + prdprice + "</td><td>" + PQ + "</td><td>" + Btn + "</td></tr>";
+
+                $("table tbody").append(allvalues);
+
+                $("#sku").val('');
+                $("#prdname").val('');
+                $("#pprice").val('');
+                $("#pqnt").val('');
+
+
+
+
+            });
+            //======================//THIS FUNCTION IS FOR ADD A ROW======================================================
+
+            //======================THIS FUNCTION IS FOR DELETE ROW======================================================
+
+            $(document).on('click', 'a.delete-row', function() {
+                $(this).closest('tr').remove();
+                return false;
+            });
+            //======================//THIS FUNCTION IS FOR DELETE ROW======================================================
+            $(document).on('click', 'a.edite-product', function() {
+
+                return (".add-product");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="input-form">
+        <form autocomplete="off">
+            <ul>
+
+                <li> Product SKU :-<input type="text" id="sku" placeholder="SKU" class="avalues"></li>
+
+                <li>Product Name:- <input type="text" id="prdname" placeholder="Product Name"></li>
+
+                <li>Product Price:-<input type="text" id="pprice" placeholder="Product Price"></li>
+
+                <li>Product Quantity:- <input type="text" id="pqnt" placeholder="Pquantiy"></li>
+
+                <li><input type="button" class="add-product" value="Add Product"></li>
+            </ul>
+
+        </form>
+    </div>
+    <!-- <div id="divgreen">
+        <p>.✔
+
+        </p>
+
+    </div> -->
+
+    <div id="redbox">
+        <p>
+        </p>
+    </div>
+    <table>
+
+        <thead>
+
+            <tr>
+                <th> SKU</th>
+                <th> NAME</th>
+                <th>PRICE</th>
+                <th>Quantity </th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+</body>
+
+</html>
